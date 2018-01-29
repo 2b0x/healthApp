@@ -39,14 +39,14 @@ body .login {
 	position: relative;
 	width: 240px;
 	border-top: 2px solid #D8312A;
-	/*height: 300px;  暂时取消高度*/
+	height: 400px;  
 	position: absolute;
 	left: 0;
 	right: 0;
 	margin: auto;
 	top: 0;
 	bottom: 0;
-	padding: 100px 40px 40px 40px;
+	padding: 50px 40px 60px 40px;
 	background: #35394a;
 	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #35394a), color-stop(100%, #1f222e));
 	background: -webkit-linear-gradient(45deg, #35394a 0%, #1f222e 100%);
@@ -107,7 +107,7 @@ body .login_fields input[type='password'] {
 	/*margin-top: -2px;*/
 	background: #32364a;
 	left: 0;
-	padding: 10px 20px;
+	padding: 10px 15px;
 	border: 2px solid #393d52;
 	/*border-bottom: 2px solid #393d52;*/
 	/*border-right: none;*/
@@ -117,7 +117,7 @@ body .login_fields input[type='password'] {
 	/*box-shadow: none;*/
 	
 	
-    width: 235px;
+    width: 240px;
     margin-left: 23px;
 
 }
@@ -253,7 +253,7 @@ dd.pic {
 }
 .regInfo input{
 	    color: #afb1be;
-    width: 150px;
+    width: 145px;
     /*margin-top: -2px;*/
     background: #32364a;
     left: 0;
@@ -268,4 +268,24 @@ dd.pic {
 }
 .pswBox{
 	position: relative;
+}
+.personInfo select{
+	
+    display: inline-block;
+    background: #32364a;
+    color: #4e546d;
+    font: 13.3333px Arial;
+    border: 2px solid #393d52;
+    margin-left: 23px;
+    width: 274px;
+    padding: 10px 15px;
+    outline: none;
+
+}
+.personInfo select option{
+	
+    outline: none;
+    height: 15px;
+    border: none;
+
 }
