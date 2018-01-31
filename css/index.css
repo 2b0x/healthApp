@@ -39,19 +39,19 @@ body {
 
 /*主体内容*/
 .content {
-	padding: 45px 0 0;
+	padding: 45px 0 55px;
 	width: 100%;
 	background-color: rgba( 33, 33, 33, 1);
 	margin-bottom: -15px;
 }
 
-.div2,
-.div3 {
+.sports,
+.person {
 	height: 100%;
 }
 
 /**********************主页**********************/
-.div1 .slideAdv {
+.home .slideAdv {
 	height: 200px;
 }
 
@@ -303,6 +303,62 @@ span.sportItemAct{
     border: 5px solid white;
     text-align:  center;
     margin-top: 30px;
+}
+.myinfo{
+    /*text-align: center;*/
+    position:  relative;
+}
+.myinfo dl{
+	
+    width: 280px;
+    margin:  0 auto;
+
+}
+.myinfo dt{
+	
+    color:  white;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: 400;
+
+}
+.myinfo dd{
+    position:  relative;
+    box-shadow: 0 0 1px 0;
+    width: 280px;
+    margin: 0 auto;
+
+}
+.myinfo dd select{
+	padding-left: 7px;
+    /*padding-right: 0px;*/
+    width: 228px;
+    margin-left: 39px;
+    height: 35px;
+    border: 0;
+	background-color: white;
+}
+.myinfo dd span{
+    height: 100%;
+    height: 35px;
+    position:  absolute;
+    width: 40px;
+    background-color: #efefef;
+    color: #9B9B9D;
+    line-height: 35px;
+    text-align:  center;
+    top: 0;
+}
+.myinfo dd input{
+	width: 240px;
+    margin-left: 39px;
+    border: none;
+    height: 35px;
+    display:  inline-block;
+    padding: 0 10px;
+}
+.ui-select span{
+	display: none;
 }
 
 
