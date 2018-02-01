@@ -1,0 +1,129 @@
+@media (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+	html {
+		font-size: 37.5px;
+	}
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+    background-color: rgba( 33, 33, 33, 1) !important;
+}
+.f-white { color: white !important; }
+.f-small{font-size: 10px; color: #AAAAAA;}
+
+/*顶部标题栏*/
+.header {
+	width: 100%;
+	height: 45px;
+	background-color: rgba(21, 21, 21, 1);
+	position: fixed;
+	color: white;
+	text-align: center;
+	z-index: 999;
+}
+.backBtn {
+	position: absolute;
+	font-size: 14px;
+	left: 10px;
+	top: 7.5px;
+	border-color: rgba(1, 1, 1, 0);
+	cursor: pointer;
+}
+.headerTitle {
+	line-height: 45px;
+	font-size: 14px;
+}
+/*顶部标题栏*/
+
+
+/*主体内容*/
+.content {
+	padding: 45px 0 55px;
+	width: 100%;
+	background-color: rgba( 33, 33, 33, 1);
+	margin-bottom: -15px;
+}
+
+.sports,
+.person {
+	height: 100%;
+}
+.foodBoxTitle {
+	height: 55px;
+	text-align: center;
+	position: relative;
+}
+.foodBoxTitle dd {
+	height: 100%;
+	line-height: 55px;
+	color: white;
+	font-size: 16px;
+}
+.foodBoxTitle dd:before,
+.foodBoxTitle dd:after {
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: 60px;
+	background-color: white;
+}
+
+.foodBoxTitle dd:before {
+	left: 50%;
+	margin-left: -96px;
+	top: 50%;
+}
+
+.foodBoxTitle dd:after {
+	right: 50%;
+	margin-right: -96px;
+	top: 50%;
+}
+
+
+/**********************视频**********************/
+.videoAdv{
+	position: relative;
+	background-position:  center;
+    background-repeat:  no-repeat;
+    background-size:  cover;
+    color: white;
+    width:  100%;
+    height: 300px;
+    background-image: url(../img/7.jpg);
+    text-align: center;
+}
+.mask-font{
+    font-size:  34px;
+    position:  relative;
+    background-color: rgba(0,0,0,.2);
+    width:  100%;
+    height:  100%;
+    line-height: 300px;
+    display:  inline-block;
+}
+.videoList{
+	width: 100%;
+    padding: 0 10px;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    justify-content: space-evenly;
+}
+.viedoItem{
+	margin: 10px 3px;
+    height:  100px;
+    width:  100px;
+    background-color:  white;
+	display: inline-block;
+}
+.footer{
+    text-align:  center;
+    position:  absolute;
+    width: 100%;
+    margin:  0 auto;
+    margin-top:  40px;
+    margin-bottom:  20px;
+	color: #999;
+}

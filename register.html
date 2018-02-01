@@ -57,9 +57,9 @@
 				</div>
 				
 				<div class='login_fields__submit'>
-					<input type='submit' value='注册' id="regiter">
+					<input type='button' value='注册' id="regiter">
 					<div class='forgot'>
-						<a href='#'>马上登录</a>
+						<a href='login.html'>马上登录</a>
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,8 @@
 				}
 			});
 			$('#regiter').click(function() {
-				alert('1');
+				alert('成功');
+				window.location.href='login.html';
 			});
 
 			function imgPreview(fileDom) {

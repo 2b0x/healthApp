@@ -16,7 +16,7 @@
 			<dd class="headerTitle">这是app标题</dd>
 		</div>
 		<div class="content">
-			<div class="home box" style="display: none;">
+			<div class="home box">
 
 				<div class="slideAdv">
 					<!-- 轮播图 -->
@@ -120,9 +120,12 @@
 						<dd>运动推荐</dd>
 					</div>
 					<div class="sportContent">
-						<div class="sportItem" style="background-image: url(img/7.jpg);"><span>增肌</span></div>
-						<div class="sportItem" style="background-image: url(img/8.jpg);"><span>减肥</span></div>
-						<div class="sportItem" style="background-image: url(img/9.jpg);"><span>塑形</span></div>
+						<div class="sportItem" style="background-image: url(img/7.jpg);">
+							<!--<a href="vide.html"></a>-->
+							<a href="video.html?type=1" target="_self">增肌</a>
+						</div>
+						<div class="sportItem" style="background-image: url(img/8.jpg);"><a href="video.html?type=2">减肥</a></div>
+						<div class="sportItem" style="background-image: url(img/9.jpg);"><a href="video.html?type=3">塑形</a></div>
 					</div>
 				</div>
 			</div>
@@ -163,16 +166,16 @@
 			</div>
 			
 			
-			<div class="person box">
+			<div class="person box" style="display: none;">
 				<div class="mypic">
 					<i></i>
 				</div>
 				<div class="myinfo">
 					<dl>
 						<dt>帐号信息</dt>
-						<dd><span class="glyphicon glyphicon-user" aria-hidden="true" style="border-radius: 5px 0 0;"></span><input type="text" style="border-radius:0 5px 0 0;" name="uname" id="uname" value="RoyRocco"/></dd>
-						<dd><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><input type="text" name="uname" id="uname" value="2b0x@163.com"/></dd>
-						<dd><span class="glyphicon glyphicon-lock" aria-hidden="true" style="border-radius:0 0 0 5px;"></span><input type="text" style="border-radius:0 0 5px ;" name="uname" id="uname" value="Reset password"/></dd>
+						<dd><span class="glyphicon glyphicon-user" aria-hidden="true" style="border-radius: 5px 0 0;"></span><input type="text" style="border-radius:0 5px 0 0;" name="uname" id="uname" value="RoyRocco" disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><input type="text" name="uname" id="uname" value="2b0x@163.com" disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-lock" aria-hidden="true" style="border-radius:0 0 0 5px;"></span><input type="text" style="border-radius:0 0 5px ;" name="uname" id="uname" value="Reset password" disabled="disabled"/></dd>
 					</dl>
 					
 					<dl>
@@ -180,20 +183,23 @@
 						<!--<dd><span class="glyphicon glyphicon-heart" aria-hidden="true" style="border-radius:5px 0 0 5px ;"></span><input type="text" style="border-radius: 0 5px 5px 0;" name="uname" id="uname" value="RoyRocco"/></dd>-->
 						<dd style="background-color: white; border-radius: 5px;">
 							<span class="glyphicon glyphicon-heart" aria-hidden="true" style="border-radius:5px 0 0 5px ;"></span>
-							<select name="">
-								<option value="">选项一</option>
-								<option value="">选项二</option>
-								<option value="">选项三</option>
+							<select name="" disabled="disabled">
+								<option value="">增肌</option>
+								<option value="">塑形</option>
+								<option value="">减肥</option>
 							</select>
 						</dd>
 					</dl>
 					
 					<dl>
 						<dt>个人信息</dt>
-						<dd><span class="glyphicon glyphicon-stats" aria-hidden="true" style="border-radius:5px 0 0 ;"></span><input type="text" style="border-radius:0 5px 0 0;" name="uname" id="uname" value="RoyRocco"/></dd>
-						<dd><span class="glyphicon glyphicon-scale" aria-hidden="true" style="border-radius: 0 0 0 5px;"></span><input type="text" style="border-radius: 0 0 5px 0;" name="uname" id="uname" value="2b0x@163.com"/></dd>
+						<dd><span class="glyphicon glyphicon-stats" aria-hidden="true" style="border-radius:5px 0 0 ;"></span><input type="text" style="border-radius:0 5px 0 0;" name="uname" id="uname" value="RoyRocco" disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-scale" aria-hidden="true" style="border-radius: 0 0 0 5px;"></span><input type="text" style="border-radius: 0 0 5px 0;" name="uname" id="uname" value="2b0x@163.com" disabled="disabled"/></dd>
 					</dl>
-					
+					<dl>
+						<dt><a href="javascript:void(0)" class="personBtn" id="changeStatus">修改个人信息</a></dt>
+						<!--<dt><a href="" class="personBtn" id="updateInfo">确认修改</a></dt>-->
+					</dl>
 				</div>
 			</div>
 		</div>
@@ -219,6 +225,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/Chart.min.js"></script>
+	<script src="js/jqcolor.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script>
 		var footerLogo = ['home', 'sport', 'me'];
@@ -258,6 +265,13 @@
 			}
 		}
 
+		//重绘图表函数
+		function chart() {
+			$('#canvas').attr('height', '100');
+			$('#canvas').attr('width', '100');
+			var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+		}
+
 		//绘制图表
 		var doughnutData = [{
 				value: 80,
@@ -276,26 +290,26 @@
 				color: "#F7464A" //油脂类
 			}
 		];
-		function chart() {
-			$('#canvas').attr('height', '100');
-			$('#canvas').attr('width', '100');
-			var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
-		}
 		chart();
 		
 		
 		//运动列表点击事件
-		$('.sportItem span').bind("touchstart",function(){
+		$('.sportItem a').on("touchstart",function(){
 			$(this).addClass('sportItemAct'); 
-            console.log(1);
 		});
-		$('.sportItem span').bind("touchend",function(){
+		$('.sportItem a').on("touchend",function(){
 			$(this).removeClass('sportItemAct');
-		});
-		
-		document.oncontextmenu=function(){
-			return false;
-		}
+		});		
 
+		//触发个人信息修改按钮
+		$('#changeStatus').click(function(){
+			$('.myinfo input').removeAttr('disabled');
+			$('.myinfo select').removeAttr('disabled');
+			var _this=$(this);
+			_this.html('确认修改');
+			_this.animate({backgroundColor:"#f7464a"},600);
+			_this.attr('id','updateInfo');
+		});
+	
 	</script>
 

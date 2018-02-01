@@ -36,9 +36,9 @@
 	      </div>
 	    </div>
 	    <div class='login_fields__submit'>
-	      <input type='submit' value='登录'>
+	      <input type='submit' value='登录' id="login">
 	      <div class='forgot'>
-	        <a href='#'>马上注册</a>
+	        <a href='register.html'>马上注册</a>
 	      </div>
 	    </div>
 	  </div>
@@ -67,6 +67,11 @@
 	            'right': '20'
 	        }, 200);
 	    }
+	});
+	
+	$('#login').click(function(){
+		alert('登录成功');
+		window.location.href='index.html';
 	});
 
 	</script>

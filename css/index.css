@@ -47,7 +47,7 @@ body {
 
 .sports,
 .person {
-	height: 100%;
+	min-height: 100%;
 }
 
 /**********************主页**********************/
@@ -215,6 +215,22 @@ body {
     height:  200px;
     /*margin-bottom: 10px;*/
 }
+.sportItem a{
+    width:  100%;
+    height: 200px;
+    display:  inline-block;
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    font-size: 40px;
+    text-align:  center;
+    color:  #AAAAAA;
+    line-height: 200px;
+    transition: color .5s,background-color .5s;
+}
+.sportItem a:hover,.sportItem a:focus{
+	color: white;
+	text-decoration: none;
+}
 .sportItem span{
     width:  100%;
     height:  100%;
@@ -227,6 +243,10 @@ body {
     transition: color .5s,background-color .5s;
 }
 span.sportItemAct{
+	color: white;
+    background-color: rgba(0,0,0,.7);
+}
+a.sportItemAct{
 	color: white;
     background-color: rgba(0,0,0,.7);
 }
@@ -272,7 +292,7 @@ span.sportItemAct{
     display: -webkit-flex;
     flex-direction: row;
     flex-wrap:  wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
 
 }
@@ -337,6 +357,7 @@ span.sportItemAct{
     height: 35px;
     border: 0;
 	background-color: white;
+	outline: none;
 }
 .myinfo dd span{
     height: 100%;
@@ -356,12 +377,34 @@ span.sportItemAct{
     height: 35px;
     display:  inline-block;
     padding: 0 10px;
+    background-color: white;
+    outline: none;
 }
 .ui-select span{
 	display: none;
 }
-
-
+.myinfo a:hover{
+	text-decoration: none;
+	color: white;
+}
+.personBtn{
+    width:  100%;
+    height: 40px;
+    text-align:  center;
+    display:  inline-block;
+    line-height: 40px;
+    text-decoration:  none;
+    color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+    /*margin-bottom: 40px;*/
+}
+#changeStatus{
+	background-color:  #23c788;
+}
+#updateInfo{
+	/*background-color: #f7464a;*/
+}
 /*主体内容*/
 
 
