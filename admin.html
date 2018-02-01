@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>后台管理</title>
+		<link rel="stylesheet" href="css/admin.css" />
+		<script src="js/jquery.min.js"></script>
 	</head>
-	
-	
+
 	<body>
-		
-		
+		<div class="container">
+			<div class="headerBg"></div>
+			<div class="header">
+				<div class="logo">
+					<span>某某后台管理系统</span>
+				</div>
+				<div class="topNav">
+					<a href="javascript:void(0);" class="active">广告管理</a>
+					<a href="javascript:void(0);">视频管理</a>
+					<a href="javascript:void(0);">餐饮管理</a>
+				</div>
+				<div class="adminUser">
+					<a href="javascript:void(0);">管理员登录</a>
+				</div>
+			</div>
+
+			<div class="content">
+				<div class="video">
+					<dl class="video-title">
+						<dt>视频资源管理</dt>
+						<dd>
+							<select name="">
+								<option value="">减肥</option>
+								<option value="">塑形</option>
+							</select>
+						</dd>
+					</dl>
+					<p class="typeTitle">视频类型封面</p>
+					<div class="videoPic">
+						<dd class="pic">
+							<div class="img" id="img1"></div>
+							<a href="javascript:;" class="a-upload">
+								<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
+							</a>
+							<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
+						</dd>
+					</div>
+					<p class="typeTitle">视频资源列表</p>
+					<div class="videoList">
+						
+						<div class="videoItem">
+							<video width="800" height="" controls="controls">
+								<source src="video/adi.mp4" type="video/mp4"></source>
+								</object>
+								当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+							</video>
+							<a href="javascript:void(0);">删除视频</a>
+						</div>
+						<div class="videoItem">
+							<video width="450" height="" controls="controls">
+								<source src="video/adi.mp4" type="video/mp4"></source>
+								</object>
+								当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+							</video>
+							<a href="javascript:void(0);">删除视频</a>
+						</div>
+							
+						
+					</div>
+				</div>
+				
+				
+
+
+			</div>
+		</div>
+
 	</body>
+	<script>
+		
+	</script>
+
 </html>

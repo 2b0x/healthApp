@@ -1,0 +1,195 @@
+html,body{
+	width: 100%;height: 100%;margin: 0;padding: 0;
+}
+
+/********************头部导航********************/
+.container{
+	width: 1000px;
+    min-height: 100%;
+    margin:  0 auto;
+}
+.headerBg{
+    width:  100%;
+    height: 50px;
+    position:  absolute;
+    left:  0;
+    top: 0;
+    background-color: #212121;
+	z-index: -1;
+}
+.header{
+    color: white;
+    height:  50px;
+    line-height: 50px;
+}
+.logo{
+	display: inline-block;
+	float: left;
+    padding: 0 50px;
+}
+.logo span{
+	cursor: default;
+}
+.topNav{
+	display: inline-block;
+	float: left;
+}
+.topNav a{
+    text-decoration:  none;
+    height:  50px;
+    display:  inline-block;
+    padding: 0 15px;
+    float: left;
+    color: white;
+	transition: background-color .5s;
+}
+.topNav a:hover{
+    background-color: #009688;
+}
+.topNav .active{
+    background-color: #009688;
+}
+.adminUser{
+
+    display:  inline-block;
+    float:  right;
+    padding: 0 30px;
+    font-size: 14px;
+
+}
+.adminUser a{
+	text-decoration: none;
+	color: white;
+}
+
+
+/********************主体部分********************/
+.content{
+    width:  960px;
+    display:  inline-block;
+    height:  500px;
+    padding: 20px;
+}
+.advItem dt{
+	
+    font-size: 22px;
+    padding-bottom: 5px;
+    font-weight: 800;
+    border-bottom: 2px solid #212121;
+
+}
+dd.pic{
+    margin: 0;
+    overflow: visible;
+    display: inline-block;
+    height: 270px;
+    width: 370px;
+	float: left;
+    margin-right: 85px;
+    
+    text-align: center;
+    padding: 10px;
+    border: 1px solid;
+    padding-bottom: 30px;
+
+}
+.a-upload {
+	text-decoration: none;
+    cursor: pointer;
+    color: white;
+    background: #5CBDAA;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 5px;
+    position: relative;
+    text-align:  center;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    *display: inline;
+    *zoom: 1;
+}
+.a-upload  input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: white;
+   	transition: background-color .2s;
+    background: rgba(12, 144, 118,1);
+    border-color: rgba(12, 144, 118,1);
+    text-decoration: none
+}
+.img{
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../img/2.jpg);
+    height: 250px;
+    display: inline-block;
+    width: 350px;
+}
+.btnRed{
+	background-color: #F7464A;
+}
+.btnRed:hover{
+	background-color: #e32a2e;
+}
+
+
+.typeTitle{
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 7px;
+    border-left: 10px solid #4486F5;
+}
+.video-title{
+    font-size: 22px;
+    padding-bottom: 5px;
+    font-weight: 800;
+    border-bottom: 2px solid #212121;
+}
+.video-title dd{
+    position:  relative;
+    top: -3px;
+}
+.video-title dd select{
+    height: 30px;
+    width: 70px;
+    padding-left: 10px;
+}
+.video-title dt,.video-title dd{
+	display: inline-block;
+}
+.videoPic{
+	display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.videoItem{
+	width: 450px;
+    display:  inline-block;
+    margin-bottom: 30px;
+    margin-right: 25px;
+}
+.videoItem a{
+    width:  80px;
+    height:  30px;
+    line-height:  30px;
+    display:  inline-block;
+    color:  white;
+    text-align:  center;
+    background-color: #f7464a;
+    text-decoration:  none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+video{
+	width: 400px;
+}   
+
