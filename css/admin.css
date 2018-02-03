@@ -45,6 +45,8 @@ html,body{
 }
 .topNav a:hover{
     background-color: #009688;
+    color: white;
+    text-decoration: none;
 }
 .topNav .active{
     background-color: #009688;
@@ -61,7 +63,10 @@ html,body{
 	text-decoration: none;
 	color: white;
 }
-
+.adminUser a:hover{
+	text-decoration: none;
+	color: white;
+}
 
 /********************主体部分********************/
 .content{
@@ -82,11 +87,11 @@ dd.pic{
     margin: 0;
     overflow: visible;
     display: inline-block;
-    height: 270px;
-    width: 370px;
+    height: 310px;
+    width: 400px;
 	float: left;
-    margin-right: 85px;
-    
+    margin-right: 60px;
+    margin-top: 10px;
     text-align: center;
     padding: 10px;
     border: 1px solid;
@@ -159,6 +164,10 @@ dd.pic{
     top: -3px;
 }
 .video-title dd select{
+	
+    font-size: 14px;
+    font-weight: 400;
+
     height: 30px;
     width: 70px;
     padding-left: 10px;
@@ -170,12 +179,28 @@ dd.pic{
 	display: inline-block;
     width: 100%;
     margin-bottom: 20px;
+    
+    
+    float:  left;
+	width: 50%;
+}
+.addVideo{
+    width: 50%;
+    display:  inline-block;
+}
+.addVideo p{
+	margin-top: 10px;
+}
+.videoList{
+	
+    margin-top: 20px;
+
 }
 .videoItem{
 	width: 450px;
     display:  inline-block;
     margin-bottom: 30px;
-    margin-right: 25px;
+    /*margin-right: 25px;*/
 }
 .videoItem a{
     width:  80px;
@@ -192,4 +217,38 @@ dd.pic{
 video{
 	width: 400px;
 }   
+th,td{
+	cursor: default;
+}
+thead th,tbody td{
+	text-align: center;
+}
+tbody td input{
+	width: 50px;
+    /* padding: 0 0 0 10px; */
+    border: none;
+    margin-right: 5px;
+    text-align: center;
 
+}
+.kcalSaveBtn{
+	float: right;
+	margin-right: 30px;
+}
+.foodAdvise{
+	margin-top: 40px;
+}
+.foodItem{
+	display: inline-block;
+	width: 100%;
+}
+.foodAdvise .pic{
+	height: 300px;
+	width: 220px;
+	margin-right: 10px;
+	margin-bottom: 50px;
+}
+.foodAdvise .pic .img{
+	width: 200px;
+	height: 200px;
+}

@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-	<head>
-		<meta charset="UTF-8">
-		<title>后台管理</title>
-		<link rel="stylesheet" href="css/admin.css" />
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<script src="js/jquery.min.js"></script>
-	</head>
-
-	<body>
-		<div class="container">
-			<div class="headerBg"></div>
-			<div class="header">
-				<div class="logo">
-					<span>某某后台管理系统</span>
-				</div>
-				<div class="topNav">
-					<a href="javascript:void(0);" class="active">广告管理</a>
-					<a href="javascript:void(0);">视频管理</a>
-					<a href="javascript:void(0);">餐饮管理</a>
-				</div>
-				<div class="adminUser">
-					<a href="javascript:void(0);">管理员登录</a>
-				</div>
-			</div>
-
-			<div class="content">
-
-
-				<div class="food">
+<div class="food">
 					<div class="kcalSetting">
 						<p class="typeTitle">餐饭卡路里控制</p>
 						<table class="table  table-hover">
@@ -76,7 +45,7 @@
 						<div class="foodItem">
 							<p class="typeTitle">减肥主食推荐</p>
 							<dd class="pic">
-								<div class="img"></div>
+								<div class="img" id="img"></div>
 								<a href="javascript:;" class="a-upload">
 									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
 								</a>
@@ -86,7 +55,7 @@
 						<div class="foodItem">
 							<p class="typeTitle">增肌主食推荐</p>
 							<dd class="pic">
-								<div class="img"></div>
+								<div class="img" id="img"></div>
 								<a href="javascript:;" class="a-upload">
 									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
 								</a>
@@ -96,9 +65,9 @@
 						<div class="foodItem">
 							<p class="typeTitle">塑形主食推荐</p>
 							<dd class="pic">
-								<div class="img" id="3-2"></div>
+								<div class="img" id="img"></div>
 								<a href="javascript:;" class="a-upload">
-									<input type="file" name="3-2" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this,this.name)" data-type="3-2">上传广告封面
+									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
 								</a>
 								<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
 							</dd>
@@ -107,51 +76,3 @@
 						
 					</div>
 				</div>
-
-			</div>
-		</div>
-
-	</body>
-<script>
-	function imgPreview(fileDom,type) {
-//		var _index = 0;
-//		picId = name;
-//		console.log(_index);
-//		var _this = $(this);
-//		console.log(_this);
-		var _type = type;
-		console.log(type);
-		
-		
-		//判断是否支持FileReader
-		if(window.FileReader) {
-			var reader = new FileReader();
-		} else {
-			alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
-		}
-
-		//获取文件
-		var file = fileDom.files[0];
-		var imageType = /^image\//;
-		//是否是图片
-		if(!imageType.test(file.type)) {
-			alert("请选择图片！");
-			return;
-		}
-		//读取完成
-		reader.onload = function(e) {
-			//获取图片dom
-//			$(this).parents('dl').parents().find('dd ul li a').removeClass('current-menuleft');
-			
-			var imgs = document.getElementById(_type);
-//			var imgs = $(this);
-//			console.log(imgs);
-			//图片路径设置为读取的图片
-			imgs.style.backgroundImage = "url(" + e.target.result + ")";
-//			var picPath = "url(" + e.target.result + ")";
-//			$(imgs).css('background-image',picPath);
-		};
-		reader.readAsDataURL(file);
-	}
-</script>
-</html>

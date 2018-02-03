@@ -1,21 +1,14 @@
-<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title></title>
-		<style>
-			.traoezoid{
-				border-bottom: 100px solid red;
-				border-left: 50px solid transparent;
-				border-right: 50px solid transparent;
-				width: 100px;
-			}
-		</style>
 	</head>
-	
-	
+
 	<body>
-		<div class="traoezoid"></div>
-	
+		<form enctype="multipart/form-data" action='upfile.php' method=post>
+			<input type="hidden" name="MAX_FILE_SIZE" value="2000000000">
+			<input type=file name=upfile size=20>
+			<input type=submit value='上传文件'>
+		</form>
 	</body>
 </html>
