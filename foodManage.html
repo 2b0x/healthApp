@@ -1,78 +1,248 @@
 <div class="food">
-					<div class="kcalSetting">
-						<p class="typeTitle">餐饭卡路里控制</p>
-						<table class="table  table-hover">
-							<caption></caption>
-							<thead>
-								<tr>
-									<th></th>
-									<th>早餐</th>
-									<th>午餐</th>
-									<th>下午加餐</th>
-									<th>晚餐</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>减肥</td>
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-								</tr>
-								<tr>
-									<td>增肌</td>
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-								</tr>
-								<tr>
-									<td>塑形</td>
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-								</tr>
-							</tbody>
-						</table>
-						<a href=""class="a-upload btnRed kcalSaveBtn">保存修改</a>
-					</div>
+	<div class="kcalSetting" id="kcalSetting">
+		<p class="typeTitle">减肥卡路里控制</p>
+		<table class="table  table-hover">
+			<caption></caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>肉蛋奶</th>
+					<th>主食类</th>
+					<th>蔬果类</th>
+					<th>油脂类</th>
+				</tr>
+			</thead>
+			<tbody id="jianfei">
+				<tr>
+					<td>早餐</td>
+					<td><input type="text" value="123" name="jianfei" />Kcal</td>
+					<td><input type="text" value="123" name="jianfei" />Kcal</td>
+					<td><input type="text" value="123" name="jianfei" />Kcal</td>
+					<td><input type="text" value="123" name="jianfei" />Kcal</td>
+				</tr>
+				<tr>
+					<td>午餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+				<tr>
+					<td>晚餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="javascript:void(0);" class="a-upload btnRed kcalSaveBtn" onclick="saveKcal('jianfei')">保存修改</a>
+		
+		<div style="clear: both;"></div>
+		<p class="typeTitle">增肌卡路里控制</p>
+		<table class="table  table-hover">
+			<caption></caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>肉蛋奶</th>
+					<th>主食类</th>
+					<th>蔬果类</th>
+					<th>油脂类</th>
+				</tr>
+			</thead>
+			<tbody id="zengji">
+				<tr>
+					<td>早餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+				<tr>
+					<td>午餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+				<tr>
+					<td>晚餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="javascript:void(0);" class="a-upload btnRed kcalSaveBtn" onclick="saveKcal('zengji')">保存修改</a>
+		
+		
+		<div style="clear: both;"></div>
+		<p class="typeTitle">塑形卡路里控制</p>
+		<table class="table  table-hover">
+			<caption></caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>肉蛋奶</th>
+					<th>主食类</th>
+					<th>蔬果类</th>
+					<th>油脂类</th>
+				</tr>
+			</thead>
+			<tbody id="suxing">
+				<tr>
+					<td>早餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+				<tr>
+					<td>午餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+				<tr>
+					<td>晚餐</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+					<td><input type="text" value="123" />Kcal</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="javascript:void(0);" class="a-upload btnRed kcalSaveBtn" onclick="saveKcal('suxing')">保存修改</a>
+	</div>
 
-					<div style="clear: both;"></div>
-					
-					<div class="foodAdvise">
-						<div class="foodItem">
-							<p class="typeTitle">减肥主食推荐</p>
-							<dd class="pic">
-								<div class="img" id="img"></div>
-								<a href="javascript:;" class="a-upload">
-									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
-								</a>
-								<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
-							</dd>
-						</div>
-						<div class="foodItem">
-							<p class="typeTitle">增肌主食推荐</p>
-							<dd class="pic">
-								<div class="img" id="img"></div>
-								<a href="javascript:;" class="a-upload">
-									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
-								</a>
-								<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
-							</dd>
-						</div>
-						<div class="foodItem">
-							<p class="typeTitle">塑形主食推荐</p>
-							<dd class="pic">
-								<div class="img" id="img"></div>
-								<a href="javascript:;" class="a-upload">
-									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
-								</a>
-								<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
-							</dd>
-						</div>
-						
-						
-					</div>
-				</div>
+	<div style="clear: both;"></div>
+
+	<div class="foodAdvise">
+		<div class="foodItem">
+			<p class="typeTitle">减肥主食推荐</p>
+			<dd class="pic">
+				<div class="img"></div>
+				<a href="javascript:;" class="a-upload">
+					<input type="file" name="1-2" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this,this.name)">上传广告封面
+				</a>
+				<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
+			</dd>
+		</div>
+		<div class="foodItem">
+			<p class="typeTitle">增肌主食推荐</p>
+			<dd class="pic">
+				<div class="img"></div>
+				<a href="javascript:;" class="a-upload">
+					<input type="file" name="2-2" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this,this.name)">上传广告封面
+				</a>
+				<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
+			</dd>
+		</div>
+		<div class="foodItem">
+			<p class="typeTitle">塑形主食推荐</p>
+			<dd class="pic">
+				<div class="img"></div>
+				<a href="javascript:;" class="a-upload">
+					<input type="file" name="3-2" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this,this.name)" data-type="3-2">上传广告封面
+				</a>
+				<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
+			</dd>
+		</div>
+
+	</div>
+</div>
+
+<script>
+	getFoodData();
+	
+	
+	
+	function imgPreview(fileDom, type) {
+		var _type = type;
+
+		//判断是否支持FileReader
+		if(window.FileReader) {
+			var reader = new FileReader();
+		} else {
+			alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+		}
+
+		//获取文件
+		var file = fileDom.files[0];
+		var imageType = /^image\//;
+		//是否是图片
+		if(!imageType.test(file.type)) {
+			alert("请选择图片！");
+			return;
+		}
+		//读取完成
+		reader.onload = function(e) {
+			//获取图片dom
+			var imgs = $("[name=" + _type + "]").parent().siblings('.img')[0];
+
+			//图片路径设置为读取的图片
+			imgs.style.backgroundImage = "url(" + e.target.result + ")";
+		};
+		reader.readAsDataURL(file);
+	}
+	
+	function saveKcal(type){
+		var typeId = type;
+		var food_1,food_2,food_3;
+		var food = new Array();
+		var inputItems = document.getElementById(typeId).getElementsByTagName('input');
+		for(var i=0;i<inputItems.length;i=i+4){			 			food.push(inputItems[i].value+'-'+inputItems[i+1].value+'-'+inputItems[i+2].value+'-'+inputItems[i+3].value);
+		}
+		console.log(food);
+		$.ajax({
+			async:true,
+			type:"post",
+			url:"foodKcal.php",
+			data:{ 
+				food_1: food[0],
+				food_2: food[1],
+				food_3: food[2],
+				typeId: typeId
+			},
+			success:function(response,xhr){
+				if(response==1){
+					alert("修改成功");
+					getFoodData();
+				}else{
+					alert("修改失败");
+				}
+			}
+		});
+	}
+
+	
+	function getFoodData(){
+		var foodData;
+		var kcal;
+		var kcals = new Array();
+		$.ajax({
+			async:false,
+			type:"post",
+			url:"getFoodData.php",
+			success:function(response,xhr){
+				foodData = JSON.parse(response);
+			}
+		});
+		for(var i=0;i<3;i++){
+			kcal = foodData[i].food_1.split('-');
+			kcals.push(kcal);
+			kcal = foodData[i].food_2.split('-');
+			kcals.push(kcal);
+			kcal = foodData[i].food_3.split('-');
+			kcals.push(kcal);
+		}
+
+		kcals=[].concat.apply([],kcals);
+		for(var i=0;i<kcals.length;i++){
+			$('#kcalSetting input')[i].value=kcals[i];
+		}
+	}
+</script>

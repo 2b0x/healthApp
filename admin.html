@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title>后台管理</title>
 		<link rel="stylesheet" href="css/admin.css" />
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<script src="js/jquery.min.js"></script>
 	</head>
 
@@ -16,7 +16,7 @@
 				<div class="logo">
 					<span>某某后台管理系统</span>
 				</div>
-				<div class="topNav">
+				<div class="topNav" id="topNav">
 					<a href="javascript:void(0);" class="active">广告管理</a>
 					<a href="javascript:void(0);">视频管理</a>
 					<a href="javascript:void(0);">餐饮管理</a>
@@ -26,132 +26,34 @@
 				</div>
 			</div>
 
-			<div class="content">
-
-
-				<div class="food">
-					<div class="kcalSetting">
-						<p class="typeTitle">餐饭卡路里控制</p>
-						<table class="table  table-hover">
-							<caption></caption>
-							<thead>
-								<tr>
-									<th></th>
-									<th>早餐</th>
-									<th>午餐</th>
-									<th>下午加餐</th>
-									<th>晚餐</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>减肥</td>
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-								</tr>
-								<tr>
-									<td>增肌</td>
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-								</tr>
-								<tr>
-									<td>塑形</td>
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-									<td><input type="text" value="123" />Kcal</td>	
-								</tr>
-							</tbody>
-						</table>
-						<a href=""class="a-upload btnRed kcalSaveBtn">保存修改</a>
-					</div>
-
-					<div style="clear: both;"></div>
-					
-					<div class="foodAdvise">
-						<div class="foodItem">
-							<p class="typeTitle">减肥主食推荐</p>
-							<dd class="pic">
-								<div class="img"></div>
-								<a href="javascript:;" class="a-upload">
-									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
-								</a>
-								<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
-							</dd>
-						</div>
-						<div class="foodItem">
-							<p class="typeTitle">增肌主食推荐</p>
-							<dd class="pic">
-								<div class="img"></div>
-								<a href="javascript:;" class="a-upload">
-									<input type="file" name="photo1" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this)">上传广告封面
-								</a>
-								<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
-							</dd>
-						</div>
-						<div class="foodItem">
-							<p class="typeTitle">塑形主食推荐</p>
-							<dd class="pic">
-								<div class="img" id="3-2"></div>
-								<a href="javascript:;" class="a-upload">
-									<input type="file" name="3-2" title="文件不超过200kb,大小最佳为60*60" onchange="imgPreview(this,this.name)" data-type="3-2">上传广告封面
-								</a>
-								<a href="javascript:void(0);" class="a-upload btnRed">保存修改</a>
-							</dd>
-						</div>
-						
-						
-					</div>
-				</div>
+			<div class="content" id="content">
 
 			</div>
 		</div>
 
 	</body>
-<script>
-	function imgPreview(fileDom,type) {
-//		var _index = 0;
-//		picId = name;
-//		console.log(_index);
-//		var _this = $(this);
-//		console.log(_this);
-		var _type = type;
-		console.log(type);
-		
-		
-		//判断是否支持FileReader
-		if(window.FileReader) {
-			var reader = new FileReader();
-		} else {
-			alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
-		}
+	<script>
+		//右侧导航栏
+		var datas = ["advManage.html", "videoManage.html", "foodManage.html"];
+		fillData(2);
+		$('#topNav a').click(function() {
+			var _this = $(this);
+			var _index = $(this).index();
 
-		//获取文件
-		var file = fileDom.files[0];
-		var imageType = /^image\//;
-		//是否是图片
-		if(!imageType.test(file.type)) {
-			alert("请选择图片！");
-			return;
+			_this.siblings().removeClass('active'); //移除所有的active样式
+			_this.addClass('active'); //为当前激活对象添加active样式
+
+			fillData(_index);
+		});
+
+		function fillData(type) {
+			var type = type;
+			$.post(datas[type],
+				function(data) {
+					var htmlobj = data;
+					$('#content').html(htmlobj);
+				});
 		}
-		//读取完成
-		reader.onload = function(e) {
-			//获取图片dom
-//			$(this).parents('dl').parents().find('dd ul li a').removeClass('current-menuleft');
-			
-			var imgs = document.getElementById(_type);
-//			var imgs = $(this);
-//			console.log(imgs);
-			//图片路径设置为读取的图片
-			imgs.style.backgroundImage = "url(" + e.target.result + ")";
-//			var picPath = "url(" + e.target.result + ")";
-//			$(imgs).css('background-image',picPath);
-		};
-		reader.readAsDataURL(file);
-	}
-</script>
+	</script>
+
 </html>

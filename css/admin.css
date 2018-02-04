@@ -48,6 +48,10 @@ html,body{
     color: white;
     text-decoration: none;
 }
+.topNav a:focus{
+	color: white;
+	text-decoration: none;
+}
 .topNav .active{
     background-color: #009688;
 }
@@ -234,6 +238,11 @@ tbody td input{
 .kcalSaveBtn{
 	float: right;
 	margin-right: 30px;
+	margin-bottom: 50px;
+}
+.kcalSaveBtn:focus{
+	color: white;
+	text-decoration: none;
 }
 .foodAdvise{
 	margin-top: 40px;

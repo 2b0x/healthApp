@@ -1,79 +1,122 @@
 <!doctype html>
 <html lang="zh">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>登录</title>	
-	<link rel="stylesheet" type="text/css" href="css/default.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-	
-</head>
-<body>
 
-	<div class='login'>
-	  <div class='login_title'>
-	    <span>账号登录</span>
-	  </div>
-	  <div class='login_fields'>
-	    <div class='login_fields__user'>
-	      <div class='icon'>
-	        <img src='img/user_icon_copy.png'>
-	      </div>
-	      <input placeholder='用户名' type='text'>
-	        <div class='validation'>
-	          <img src='img/tick.png'>
-	        </div>
-	      </input>
-	    </div>
-	    <div class='login_fields__password'>
-	      <div class='icon'>
-	        <img src='img/lock_icon_copy.png'>
-	      </div>
-	      <input placeholder='密码' type='password' >
-	      <div class='validation' id="viewable">
-	        <img src='img/eyes.png'>
-	      </div>
-	    </div>
-	    <div class='login_fields__submit'>
-	      <input type='submit' value='登录' id="login">
-	      <div class='forgot'>
-	        <a href='register.html'>马上注册</a>
-	      </div>
-	    </div>
-	  </div>
-	  <!--<div class='disclaimer'>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper laoreet placerat. Nullam semper auctor justo, rutrum posuere odio vulputate nec.</p>
-	  </div>-->
-	</div>
-	
-	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-	<script>
-	$('input[type="text"],input[type="password"]').focus(function () {
-	    $(this).prev().animate({ 'opacity': '1' }, 200);
-	});
-	$('input[type="text"],input[type="password"]').blur(function () {
-	    $(this).prev().animate({ 'opacity': '.5' }, 200);
-	});
-	$('input[type="text"],input[type="password"]').keyup(function () {
-	    if (!$(this).val() == '') {
-	        $(this).next().animate({
-	            'opacity': '1',
-	            'right': '30'
-	        }, 200);
-	    } else {
-	        $(this).next().animate({
-	            'opacity': '0',
-	            'right': '20'
-	        }, 200);
-	    }
-	});
-	
-	$('#login').click(function(){
-		alert('登录成功');
-		window.location.href='index.html';
-	});
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/default.css">
+		<link rel="stylesheet" type="text/css" href="css/login.css">
 
-	</script>
-</body>
+	</head>
+
+	<body>
+
+		<div class='login'>
+			<div class='login_title'>
+				<span>账号登录</span>
+			</div>
+			<div class='login_fields'>
+				<div class='login_fields__user'>
+					<div class='icon'>
+						<img src='img/user_icon_copy.png'>
+					</div>
+					<input placeholder='登录邮箱' type='text' name="userEmail" id="userEmail">
+					<div class='validation'>
+						<img src='img/tick.png'>
+					</div>
+					</input>
+				</div>
+				<div class='login_fields__password'>
+					<div class='icon'>
+						<img src='img/lock_icon_copy.png'>
+					</div>
+					<input placeholder='登录密码' type='password' name="password" id="password">
+					<div class='validation' id="viewable">
+						<img src='img/eyes.png'>
+					</div>
+				</div>
+				<div class='login_fields__submit'>
+					<input type='submit' value='登录' id="login">
+					<div class='forgot'>
+						<a href='register.html'>马上注册</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script>
+			var ref = '';
+			if(document.referrer.length > 0) {
+				ref = document.referrer;
+				if(ref.indexOf('register')>0){
+					ref = 'index.php';
+				}
+			}else{
+				ref = 'index.php';
+			}
+
+			$('input[type="text"],input[type="password"]').focus(function() {
+				$(this).prev().animate({
+					'opacity': '1'
+				}, 200);
+			});
+			$('input[type="text"],input[type="password"]').blur(function() {
+				$(this).prev().animate({
+					'opacity': '.5'
+				}, 200);
+			});
+			$('input[type="text"],input[type="password"]').keyup(function() {
+				if(!$(this).val() == '') {
+					$(this).next().animate({
+						'opacity': '1',
+						'right': '30'
+					}, 200);
+				} else {
+					$(this).next().animate({
+						'opacity': '0',
+						'right': '20'
+					}, 200);
+				}
+			});
+			$('#viewable').click(function() {
+				var pas = $('#password');
+				if(pas.attr('type') == 'password') {
+					pas.attr('type', 'text');
+				} else {
+					pas.attr('type', 'password');
+				}
+			});
+
+			$('#login').click(function() {
+//				if(status == 1) {
+					var userEmail = $('#userEmail').val();
+					var password = $('#password').val();
+					$.ajax({
+						type: "post",
+						url: "checkLogin.php",
+						async: false,
+						data: {
+							userEmail: userEmail,
+							password: password
+						},
+						success: function(response, status, xhr) {
+							if(response == 1) {
+								alert('登录成功');
+								window.location.href = ref;
+							} else {
+								alert('登录失败，请检查帐号及密码正确性');
+							}
+						}
+					});
+					//		window.location.back();
+
+//				}
+
+			})
+		</script>
+	</body>
+
 </html>
