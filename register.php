@@ -7,7 +7,7 @@
 			$nameTag = time();
 			$filename = $nameTag . '0' . substr($_FILES['photo']['name'], strrpos($_FILES['photo']['name'],'.'));  
 			$response = array();
-			$path = "img/personPic/"  . $filename;  
+			$path = "img/personPic"  . $filename;  
 			$user_name = $_POST['username'];
 			$user_email = $_POST['email'];
 			$user_height = $_POST['height'];
