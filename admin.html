@@ -22,7 +22,7 @@
 					<a href="javascript:void(0);">餐饮管理</a>
 				</div>
 				<div class="adminUser">
-					<a href="javascript:void(0);">管理员登录</a>
+					<a href="javascript:void(0);"><?php if(!empty($adminName)){echo '<a href="adminOut.php">退出管理员帐号</a>';}else{echo '<a href="adminLog.html">用户登录</a>';} ?></a>
 				</div>
 			</div>
 

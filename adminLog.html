@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>后台登录</title>
+		<meta name="author" content="DeathGhost">
+		<link rel="stylesheet" href="css/login.css">
+
+	</head>
+
+	<body>
+
+		<form action="" method="" onsubmit="">
+
+			<dl class="admin_login">
+				<dt>
+  <strong>管理员登录</strong>
+ </dt>
+				<dd class="user_icon">
+					<input type="text" placeholder="请输入管理员帐号" class="login_txtbx" id="adminAccount">
+				</dd>
+				<dd class="pwd_icon">
+					<input type="password" placeholder="请输入管理员密码" class="login_txtbx" id="adminPSW">
+				</dd>
+				<dd>
+					<input type="button" id="loginBtn" value="立即登陆" class="submit_btn">
+				</dd>
+			</dl>
+		</form>
+		<script src="js/jquery.min.js" charset="utf-8"></script>
+	</body>
+
+
+	<script>
+			$('#loginBtn').click(function(){
+			
+				var adminAccount = $('#adminAccount').val();
+				var adminPSW = $('#adminPSW').val();
+				$.ajax({
+					type:"post",
+					url:"checkAdmin.php",
+					async:false,
+					data: {
+						adminAccount: adminAccount,
+						adminPSW: adminPSW
+					},
+					success:function(response, status, xhr){
+						if(response==1){
+							alert('登录成功');
+							window.location.href="admin.php";
+						}else{
+							alert('登录失败，请检查帐号及密码正确性');
+						}
+					}
+				});
+		});
+		
+		
+	</script>
+</html>
