@@ -104,7 +104,7 @@ body {
 .foodTimeBtn dd {
 	display: inline-block;
 	float: left;
-	width: 25%;
+	width: 33.33%;
 	font-size: 13px;
 	position:  relative;
 	text-align:  center;
@@ -146,6 +146,12 @@ body {
 .foodDataContent{
     color:  white;
     font-size: 12px;
+}
+.foodDataContent span{
+	text-align: center;
+    width: 20px;
+    display:  inline-block;
+
 }
 .foodDataContent dd{
     padding-left: 15px;
@@ -193,7 +199,9 @@ body {
 	 background-repeat: no-repeat; 
 	 background-position: center; 
 	 width: 100px; 
-	 height: 100px;"
+	 height: 100px;
+	 border: 2px solid white;
+	 
 }
 .foodItemList dd p{
 	font-size: 12px;
@@ -288,19 +296,30 @@ a.sportItemAct{
 	width: 100%;
     /*text-align: justify;*/
     padding: 0 10px;
-    
     display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
     flex-direction: row;
     flex-wrap:  wrap;
     justify-content: space-evenly;
+    margin:  0 auto;
+}
 
+.videoList p{
+    margin: 0 auto;
+    color:  white;
+    text-align:  center;
+    line-height: 150px;
+    font-size: 18px;
 
 }
-.viedoItem{
+.videoItem{
 	margin: 10px 3px;
-    height:  100px;
-    width:  100px;
-    background-color:  white;
+    height:  150px;
+    width:  150px;
+    /*background-color:  white;*/
 	display: inline-block;
 }
 
@@ -402,8 +421,9 @@ a.sportItemAct{
 #changeStatus{
 	background-color:  #23c788;
 }
-#updateInfo{
-	/*background-color: #f7464a;*/
+#outLogin{
+	background-color: #f7464a;
+	margin-top: 0px;
 }
 /*主体内容*/
 

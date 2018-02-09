@@ -12,7 +12,7 @@
 
 	<body>
 		<div class="header">
-			<dd class="backBtn"><span style="font-size: 18px;">﹤</span><span>Back</span></dd>
+			<!--<dd class="backBtn"><span style="font-size: 18px;">﹤</span><span>Back</span></dd>-->
 			<dd class="headerTitle">这是app标题</dd>
 		</div>
 		<div class="content">
@@ -28,10 +28,10 @@
 
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<img src="img/1.jpg" alt="">
+								<img src="" alt="">
 							</div>
 							<div class="item">
-								<img src="img/2.jpg" alt="">
+								<img src="" alt="">
 							</div>
 						</div>
 
@@ -54,7 +54,7 @@
 					<div class="foodTimeBtn">
 						<dd>早餐<i class="footer-i"></i></dd>
 						<dd>午餐<i></i></dd>
-						<dd>下午加餐<i></i></dd>
+						<!--<dd>下午加餐<i></i></dd>-->
 						<dd>晚餐<i></i></dd>
 					</div>
 					<div class="foodTimeList">
@@ -62,14 +62,14 @@
 						<canvas id="canvas" height="100" width="100"></canvas>
 						<div class="foodData">
 							<div class="foodDataTitle">
-								<span id="kcal">755Kcal</span>
+								<span id="kcal">--</span><span>Kcal</span>
 								<span class="f-small">食物参考摄入量</span>
 							</div>
 							<div class="foodDataContent">
-								<dd><i></i>肉蛋奶 <span>245</span>Kcal</dd>
-								<dd><i></i>主食类 <span>310</span>Kcal</dd>
-								<dd><i></i>蔬果类 <span>120</span>Kcal</dd>
-								<dd><i></i>油脂类 <span>80</span>Kcal</dd>
+								<dd><i></i>肉蛋奶 <span>--</span> Kcal</dd>
+								<dd><i></i>主食类 <span>--</span> Kcal</dd>
+								<dd><i></i>蔬果类 <span>--</span> Kcal</dd>
+								<dd><i></i>油脂类 <span>--</span> Kcal</dd>
 							</div>
 							<div class="foodDataFooter f-small">
 								*油脂主要来自食物本身及烹饪过程。若该餐食物均为水煮、建议通过坚果补充。
@@ -78,34 +78,34 @@
 					</div>
 					<div class="foodAdvise">
 						<div class="foodAdviseTitle">
-							<p>主食类建议<span>280</span>Kcal</p>
-							<p class="f-small">食物可从中任选，主食类共摄入<span>280</span>Kcal</p>
+							<p>主食类建议 <span>--</span> Kcal</p>
+							<p class="f-small">食物可从下面食物中挑选 1-2 样搭配</p>
 						</div>
 						<div class="foodAdviseList">
 							<div class="foodItemList">
 									<dl>
 										<dt style="background-image: url(img/10.jpg);"></dt>
-										<dd>
+										<!--<dd>
 											<p>鸡蛋 180Kcal</p>
-										</dd>
+										</dd>-->
 									</dl>
 									<dl>
 										<dt style="background-image: url(img/11.jpg);"></dt>
-										<dd>
+										<!--<dd>
 											<p>牛肉 245Kcal</p>
-										</dd>
+										</dd>-->
 									</dl>
 									<dl>
 										<dt style="background-image: url(img/12.jpg);"></dt>
-										<dd>
+										<!--<dd>
 											<p>鱼肉 200Kcal</p>
-										</dd>
+										</dd>-->
 									</dl>
 									<dl>
 										<dt style="background-image: url(img/13.jpg);"></dt>
-										<dd>
+										<!--<dd>
 											<p>面包 78Kcal</p>
-										</dd>
+										</dd>-->
 									</dl>
 									
 								
@@ -120,55 +120,37 @@
 						<dd>运动推荐</dd>
 					</div>
 					<div class="sportContent">
-						<div class="sportItem" style="background-image: url(img/7.jpg);">
-							<!--<a href="vide.html"></a>-->
-							<a href="video.html?type=1" target="_self">增肌</a>
-						</div>
-						<div class="sportItem" style="background-image: url(img/8.jpg);"><a href="video.html?type=2">减肥</a></div>
-						<div class="sportItem" style="background-image: url(img/9.jpg);"><a href="video.html?type=3">塑形</a></div>
+						<div class="sportItem"><a href="video.php?type=1" target="_self">减肥</a></div>
+						<div class="sportItem"><a href="video.php?type=2" target="_self">增肌</a></div>
+						<div class="sportItem"><a href="video.php?type=3" target="_self">塑形</a></div>
 					</div>
 				</div>
 			</div>
 <!---------------------首页--------------------->
 
-
+<!---------------------运动页--------------------->
 			<div class="sports box" style="display: none;">
 				<div class="videoAdv">
-					<span class="mask-font">增肌</span>
+					<span class="mask-font"><?php if($is_login==0){echo  '请登录' ;}else{echo $target[$usertarget-1];} ?></span>
 				</div>
 				<div class="foodBoxTitle">
 					<dd>训练视频</dd>
 				</div>
-				<div class="videoList">
-					<dl class="viedoItem">
-						<dt></dt>
-						<dd></dd>
-					</dl>
-					<dl class="viedoItem">
-						<dt></dt>
-						<dd></dd>
-					</dl>
-					<dl class="viedoItem">
-						<dt></dt>
-						<dd></dd>
-					</dl>
-					<dl class="viedoItem">
-						<dt></dt>
-						<dd></dd>
-					</dl>
-					<dl class="viedoItem">
-						<dt></dt>
-						<dd></dd>
-					</dl>
-					<dl class="viedoItem">
-						<dt></dt>
-						<dd></dd>
-					</dl>
+				<div class="videoList" id="videoList">
+					<p>当前用户未登录</p>
+					
+					<!--<dl class="videoItem">
+						<video width="150" height="150" controls="controls">
+								<source src="video/adi.mp4" type="video/mp4"></source>
+							</video>
+						
+					</dl>-->
 				</div>
 			</div>
 <!---------------------运动页--------------------->
 			
 			
+<!---------------------个人信息页--------------------->
 			<div class="person box" style="display: none;">
 				<div class="mypic">
 					<i></i>
@@ -176,9 +158,9 @@
 				<div class="myinfo">
 					<dl>
 						<dt>帐号信息</dt>
-						<dd><span class="glyphicon glyphicon-user" aria-hidden="true" style="border-radius: 5px 0 0;"></span><input type="text" style="border-radius:0 5px 0 0;" name="uname" id="uname" value="RoyRocco" disabled="disabled"/></dd>
-						<dd><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><input type="text" name="uname" id="uname" value="2b0x@163.com" disabled="disabled"/></dd>
-						<dd><span class="glyphicon glyphicon-lock" aria-hidden="true" style="border-radius:0 0 0 5px;"></span><input type="text" style="border-radius:0 0 5px ;" name="uname" id="uname" value="Reset password" disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-user" aria-hidden="true" style="border-radius: 5px 0 0;"></span><input type="text" style="border-radius:0 5px 0 0;" name="username" id="" value=<?php echo $username; ?> disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><input type="text" name="email" id="" value=<?php echo $useremail; ?> disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-lock" aria-hidden="true" style="border-radius:0 0 0 5px;"></span><input type="text" style="border-radius:0 0 5px ;" name="password" id="" value="Reset password" disabled="disabled"/></dd>
 					</dl>
 					
 					<dl>
@@ -186,25 +168,26 @@
 						<!--<dd><span class="glyphicon glyphicon-heart" aria-hidden="true" style="border-radius:5px 0 0 5px ;"></span><input type="text" style="border-radius: 0 5px 5px 0;" name="uname" id="uname" value="RoyRocco"/></dd>-->
 						<dd style="background-color: white; border-radius: 5px;">
 							<span class="glyphicon glyphicon-heart" aria-hidden="true" style="border-radius:5px 0 0 5px ;"></span>
-							<select name="" disabled="disabled">
-								<option value="">增肌</option>
-								<option value="">塑形</option>
-								<option value="">减肥</option>
+							<select name="" disabled="disabled" id="target">
+								<option value="1">减肥</option>
+								<option value="2">增肌</option>
+								<option value="3">塑形</option>
 							</select>
 						</dd>
 					</dl>
 					
 					<dl>
 						<dt>个人信息</dt>
-						<dd><span class="glyphicon glyphicon-stats" aria-hidden="true" style="border-radius:5px 0 0 ;"></span><input type="text" style="border-radius:0 5px 0 0;" name="uname" id="uname" value="RoyRocco" disabled="disabled"/></dd>
-						<dd><span class="glyphicon glyphicon-scale" aria-hidden="true" style="border-radius: 0 0 0 5px;"></span><input type="text" style="border-radius: 0 0 5px 0;" name="uname" id="uname" value="2b0x@163.com" disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-stats" aria-hidden="true" style="border-radius:5px 0 0 ;"></span><input type="text" style="border-radius:0 5px 0 0;" name="height" id="" value=<?php echo $userheight; ?> disabled="disabled"/></dd>
+						<dd><span class="glyphicon glyphicon-scale" aria-hidden="true" style="border-radius: 0 0 0 5px;"></span><input type="text" style="border-radius: 0 0 5px 0;" name="weight" id="" value=<?php echo $userweight; ?> disabled="disabled"/></dd>
 					</dl>
 					<dl>
 						<dt><a href="javascript:void(0)" class="personBtn" id="changeStatus">修改个人信息</a></dt>
-						<!--<dt><a href="" class="personBtn" id="updateInfo">确认修改</a></dt>-->
+						<dt><a href="javascript:void(0)" class="personBtn" id="outLogin">退出登录</a></dt>
 					</dl>
 				</div>
-			</div>
+		</div> 
+		
 <!---------------------个人信息页--------------------->
 			
 		</div>
@@ -233,88 +216,201 @@
 	<script src="js/jqcolor.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	<script>
-		var footerLogo = ['home', 'sport', 'me'];
+		var footerLogo = ["home", "sport", "me"];
 		var footer_i = $('.footer li dt i');
 		var Page = null;
+		var isLogin = "<?php echo $is_login; ?>";
+		var videoPics = JSON.parse('<?php echo $videoPics; ?>');//获取视频封面
+		var advPics = JSON.parse('<?php echo $advPics; ?>')
 		
-		//绘制底部导航logo
-		resetLogo();
-		footer_i.eq(0).css('background-image', 'url(img/' + footerLogo[0] + 'Act.png');
-
-		//切换底部导航logo
-		$('.footer ul li').click(function() {
-			var _index = $(this).index();
-
-			resetLogo();
-			footer_i.eq(_index).css('background-image', 'url(img/' + footerLogo[_index] + 'Act.png');
-			$('.footer li dd').removeClass('f-white');
-			$(this).find('dd').addClass('f-white');
-
-			var box = $('.content .box');
-			box.css('display', 'none');
-			box.eq(_index).fadeToggle(500);
-		});
-
-		//切换餐点列表
-		$('.foodTimeBtn dd').click(function() {
-			var _index = $(this).index();
-			$('.foodTimeBtn dd i').removeClass('footer-i');
-			$(this).find('i').addClass('footer-i');
-			//			console.log(_index);
-		});
-
-		//重绘底部导航logo
-		function resetLogo() {
-			for(var i = 0; i < 3; i++) {
-				footer_i.eq(i).css('background-image', 'url(img/' + footerLogo[i] + '.png');
-			}
-		}
-
-		//重绘图表函数
-		function chart() {
-			$('#canvas').attr('height', '100');
-			$('#canvas').attr('width', '100');
-			var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
-		}
-
 		//绘制图表
 		var doughnutData = [{
-				value: 80,
+				value: 25,
 				color: "#79B6F2" //肉蛋奶
 			},
 			{
-				value: 100,
+				value: 42,
 				color: "#FDB45C" //主食类
 			},
 			{
-				value: 50,
+				value: 25,
 				color: "#23C788" //蔬果类
 			},
 			{
-				value: 30,
+				value: 63,
 				color: "#F7464A" //油脂类
 			}
 		];
 		chart();
 		
+		//login==true 
+		if(isLogin==1){
+			var videoDatas = JSON.parse('<?php echo $videoDatas; ?>');//获取视频播放地址
+			var foodDatas = JSON.parse('<?php echo $foodDatas; ?>');//获取Kcal
+			
+			fillVideo();//填充视频
+			var userTarget = "<?php echo $usertarget ?>";
+			$(".videoAdv").eq(0).css("background-image","url("+videoPics[userTarget-1].path+")");
+			
+			fillFoodPic();
+			fillFood(1);//填充主食推荐图片
+			
+			$('.foodTimeBtn dd').addClass('timeBtn');
+		}
+
+
+
+		$('.foodTimeBtn .timeBtn').click(function(){
+			var _index = $(this).index();
+			fillFood(_index+1);
+			
+		});
+
+		//填充主食建议图片
+		function fillFoodPic(){
+			var foodPics = new Array();
+			for(var i=0;i<5;i++){
+				foodPics.push(foodDatas[0][i]);
+			}
+			for(var i=0;i<foodPics.length;i++){
+				$(".foodItemList dt").eq(i).css("background-image","url("+foodPics[i+1]+")");
+			}
+		}
+
+		//填充餐饭Kcal
+		function fillFood(time){	
+			var times = 'food_'+time;
+			var kcal = foodDatas[0][times];
+			kcal = kcal.split('-');
+			var tol=0
+			for(var i=0;i<kcal.length;i++){
+				tol = tol+(kcal[i]-0);
+			}
+			$('#kcal').html(tol);
+			for(var i=0;i<kcal.length;i++){
+				$('.foodDataContent span').eq(i).html(kcal[i]);
+			}
+			$('.foodAdviseTitle span').html(kcal[1]);
+			
+			
+			//重绘图表
+			for(var i=0;i<kcal.length;i++){
+				doughnutData[i].value=parseInt(kcal[i]);
+			}
+			chart();
+		}
+
+		
+		fillAdv();
+		//填充广告
+		function fillAdv(){
+			for(var i=0;i<advPics.length;i++){
+				$(".carousel-inner .item img").eq(i).attr("src",advPics[i].path);
+			}
+		}
+		
+		//填充运动视频
+		function fillVideo(){
+			$('#videoList').html("");
+			var items = ""
+			for(var i=0;i<videoDatas.length;i++){
+				var item = '<dl class="videoItem"><video width="150" height="150" controls="controls"><source src="' + videoDatas[i].path + '" type="video/mp4"></source></video></dl>'
+				items = items + item;
+			}
+			$('#videoList').append(items); 
+		}
+		
+		
+		//绘制底部导航logo
+		resetLogo();
+		footer_i.eq(0).css("background-image", "url(img/" + footerLogo[0] + "Act.png");
+		
+		fillVideoPic();
+		//填充主页视频海报
+		function fillVideoPic(){
+			for(var i=0;i<videoPics.length;i++){
+				$(".sportContent .sportItem").eq(i).css("background-image","url("+videoPics[i].path+")");
+			}
+		}
+		
+		
+		
+		//切换底部导航logo
+		$('.footer ul li').click(function() {
+			var _index = $(this).index();
+
+			if(_index==2){
+				if(isLogin==0){
+					var r=confirm("当前未登录，是否登录")
+					if (r==true){
+					    window.location.href = "login.html";
+					}
+				}else{
+					changeIndex();
+					$("#target option[value='<?php echo $usertarget; ?>']").attr("selected","selected");
+				}
+			}else{
+				changeIndex();
+			}
+			
+			function changeIndex(){
+				resetLogo();
+				footer_i.eq(_index).css("background-image", "url(img/" + footerLogo[_index] + "Act.png");
+				$(".footer li dd").removeClass("f-white");
+				$(this).find("dd").addClass("f-white");
+				var box = $(".content .box");
+				box.css("display", "none");
+				box.eq(_index).fadeToggle(500);
+			}
+		});
+
+		//切换餐点列表
+		$(".foodTimeBtn dd").click(function() {
+			var _index = $(this).index();
+			$(".foodTimeBtn dd i").removeClass("footer-i");
+			$(this).find("i").addClass("footer-i");
+		});
+
+		//重绘底部导航logo
+		function resetLogo() {
+			for(var i = 0; i < 3; i++) {
+				footer_i.eq(i).css("background-image", "url(img/" + footerLogo[i] + ".png");
+			}
+		}
+
+		//重绘图表函数
+		function chart() {
+			$("#canvas").attr("height", "100");
+			$("#canvas").attr("width", "100");
+			var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+		}
+
+		
+		
 		
 		//运动列表点击事件
-		$('.sportItem a').on("touchstart",function(){
-			$(this).addClass('sportItemAct'); 
+		$(".sportItem a").on("touchstart",function(){
+			$(this).addClass("sportItemAct"); 
 		});
-		$('.sportItem a').on("touchend",function(){
-			$(this).removeClass('sportItemAct');
+		$(".sportItem a").on("touchend",function(){
+			$(this).removeClass("sportItemAct");
 		});		
 
 		//触发个人信息修改按钮
-		$('#changeStatus').click(function(){
-			$('.myinfo input').removeAttr('disabled');
-			$('.myinfo select').removeAttr('disabled');
+		$("#changeStatus").click(function(){
+			$(".myinfo input[name!='email']").removeAttr("disabled");
+			$(".myinfo select").removeAttr("disabled");
 			var _this=$(this);
-			_this.html('确认修改');
-			_this.animate({backgroundColor:"#f7464a"},600);
-			_this.attr('id','updateInfo');
+			_this.html("确认修改");
+			_this.animate({backgroundColor:"#4C8BF5"},600);
+			_this.attr("id","updateInfo");
 		});
+	
+	//退出登录
+	$('#outLogin').click(function(){
+		alert("已退出登录");
+		window.location.href = "loginOut.php";
+	});
 	
 	</script>
 

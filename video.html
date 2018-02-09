@@ -20,69 +20,19 @@
 		<div class="content">
 			<div class="sports box">
 				<div class="videoAdv">
-					<span class="mask-font">增肌</span>
+					<span class="mask-font"><?php echo $target[$type-1]; ?></span>
 				</div>
 				<div class="foodBoxTitle">
 					<dd>训练视频</dd>
 				</div>
 				<div class="video">
-					<div class="videoList">
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
-						<dl class="viedoItem">
-							<dt></dt>
-							<dd></dd>
-						</dl>
+					<div class="videoList" id="videoList">
+						<!--<dl class="videoItem">
+							<video width="150" height="150" controls="controls">
+								<source src="video/adi.mp4" type="video/mp4"></source>
+							</video>
+						</dl>-->
+						
 					</div>
 					<div class="footer"><span>------我是有底线哒------</span></div>
 				</div>
@@ -93,6 +43,25 @@
 	
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script>
+		var videoPics = JSON.parse('<?php echo $videoPics; ?>');
+		var videoDatas = JSON.parse('<?php echo $videoDatas; ?>');
+		
+		var type = <?php echo $type; ?>;
+		$(".videoAdv").eq(0).css("background-image","url("+videoPics[type-1].path+")");
+		
+		fillVideo();
+		//填充运动视频
+		function fillVideo(){
+			$('#videoList').html("");
+			var items = ""
+			for(var i=0;i<videoDatas.length;i++){
+				var item = '<dl class="videoItem"><video width="150" height="150" controls="controls"><source src="' + videoDatas[i].path + '" type="video/mp4"></source></video></dl>'
+				items = items + item;
+			}
+			$('#videoList').append(items); 
+		}
+		
+		
 		$('#backBtn').click(function(){
 			window.history.back();
 		});

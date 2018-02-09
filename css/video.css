@@ -109,7 +109,7 @@ body {
     display: -webkit-flex;
     flex-direction: row;
     flex-wrap:  wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 .viedoItem{
 	margin: 10px 3px;
